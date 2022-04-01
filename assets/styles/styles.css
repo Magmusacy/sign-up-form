@@ -16,6 +16,8 @@ body {
 :root {
   --right-panel-color: #222;
   --right-form-color: #333;
+  --valid-input-border: rgb(58, 219, 22);
+  --invalid-input-border: rgb(254, 18, 18);
 }
 
 #left {
@@ -99,12 +101,21 @@ body {
   background-color: #333;
 }
 
-#right form>div>input:invalid {
-  border-color: rgb(254, 18, 18);
+#right form > div > input:invalid,
+/* This class is for javascript */
+html #right form > div > input.invalid {
+  border-color: var(--invalid-input-border);
 }
 
-#right form>div>input:valid {
-  border-color: rgb(58, 219, 22);
+#right form > div > input:valid,
+/* This class is for javascript */
+html #right form > div > input.valid {
+  border-color: var(--valid-input-border);
+}
+
+#right form > div#password-info {
+  height: 1rem;
+  width: 100%;
 }
 
 #right footer {
