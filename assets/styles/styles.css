@@ -18,6 +18,7 @@ body {
   --right-form-color: #333;
   --valid-input-border: rgb(58, 219, 22);
   --invalid-input-border: rgb(254, 18, 18);
+  --default-input-border: rgb(132, 79, 125);
 }
 
 #left {
@@ -46,6 +47,7 @@ body {
 
 #right {
   --header-heigth: 40vh;
+  --left-padding: 50px;
   background-color: var(--right-panel-color);
   font-size: clamp(1.2rem, 1.2vw, 3rem);
   width: 70vw;
@@ -56,7 +58,7 @@ body {
   text-align: left;
   padding-top: calc(var(--header-heigth) - 20vh);
   padding-right: 40%;
-  padding-left: 50px;
+  padding-left: var(--left-padding);
 }
 
 #right form > div.info-on-required {
@@ -67,13 +69,13 @@ body {
 
 #right form {
   --padding: 20px;
+  padding: var(--padding) var(--left-padding);
   --border: rgb(132, 164, 240);
   display: flex;
   align-content: space-around;
   background-color: var(--right-form-color);
   box-shadow: 0 2px 3px 0 rgb(61, 61, 61);
   flex-wrap: wrap;
-  padding: var(--padding) 50px;
   height: 30vh;
   font-size: 1rem;
 }
@@ -90,7 +92,7 @@ body {
   border: 2px solid var(--border);
   border-radius: 3px;
   outline: none;
-  width: 50%;
+  width: 250px;
   height: 30px;
 }
 
@@ -110,13 +112,18 @@ html #right form > div > input.valid {
   border-color: var(--valid-input-border);
 }
 
+/* Make sure inputs have default border before they are valid/invalid */
+#right form>div>input:placeholder-shown {
+  border-color: var(--default-input-border);
+}
+
 #right form > div#password-info {
   height: 1rem;
   width: 100%;
 }
 
 #right footer {
-  padding: 50px;
+  padding: var(--left-padding);
   height: 30vh;
 }
 
