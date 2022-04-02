@@ -67,7 +67,6 @@ body {
 
 #right form {
   --padding: 20px;
-  --focus-border: rgb(18, 85, 241);
   --border: rgb(132, 164, 240);
   display: flex;
   align-content: space-around;
@@ -96,8 +95,6 @@ body {
 }
 
 #right form > div > input:focus {
-  box-shadow: 0 0 3px 0px var(--focus-border);
-  border: 2px solid var(--focus-border);
   background-color: #333;
 }
 
@@ -123,7 +120,7 @@ html #right form > div > input.valid {
   height: 30vh;
 }
 
-#right footer > button {
+#right footer > button[type="submit"] {
   padding: 5px;
   border: 0;
   width: 120px;
